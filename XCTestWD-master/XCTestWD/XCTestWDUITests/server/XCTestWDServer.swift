@@ -20,8 +20,8 @@ public class XCTestWDServer {
             
             NSLog("\(Bundle.main.bundleIdentifier!)")
             
-            
-            NSLog("XCTestWDSetup->http://localhost:\(try! server.port())<-XCTestWDSetup")
+            let ip = XCTestgetDeviceip.getIPAddress(true)!
+            NSLog("XCTestWDSetup->http://\(ip):\(try! server.port())")
             RunLoop.main.run()
         } catch {
             print("Server start error: \(error)")

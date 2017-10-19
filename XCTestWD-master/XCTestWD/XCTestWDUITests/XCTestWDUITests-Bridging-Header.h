@@ -19,3 +19,5 @@
 #import "XCTestDaemonsProxy.h"
 #import "XCTRunnerDaemonSession.h"
 #import <CommonCrypto/CommonCrypto.h>
+#import "XCTestgetDeviceip.h"
+#import "XCTestWDApplication.h"

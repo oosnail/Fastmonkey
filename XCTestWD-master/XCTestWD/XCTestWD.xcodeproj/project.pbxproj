@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22AC58421F42E0BE006F85D7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22AC58021F42E0BE006F85D7 /* Info.plist */; };
 		22AC58431F42E0BE006F85D7 /* CDStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC58041F42E0BE006F85D7 /* CDStructures.h */; };
 		22AC58441F42E0BE006F85D7 /* XCAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC58051F42E0BE006F85D7 /* XCAccessibilityElement.h */; };
 		22AC58451F42E0BE006F85D7 /* XCAXClient_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC58061F42E0BE006F85D7 /* XCAXClient_iOS.h */; };
@@ -69,15 +68,29 @@
 		22AC589D1F42E59B006F85D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC58941F42E59B006F85D7 /* Assets.xcassets */; };
 		22AC589E1F42E59B006F85D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC58961F42E59B006F85D7 /* LaunchScreen.storyboard */; };
 		22AC589F1F42E59B006F85D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC58981F42E59B006F85D7 /* Main.storyboard */; };
-		22AC58A01F42E59B006F85D7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22AC589A1F42E59B006F85D7 /* Info.plist */; };
 		22AC58A11F42E59B006F85D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC589B1F42E59B006F85D7 /* ViewController.swift */; };
 		22AC58A41F42E5EE006F85D7 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AC58A31F42E5EE006F85D7 /* libxml2.2.tbd */; };
 		63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; };
 		63D408681EAB63BC00198736 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; };
+		7B0EE24B1F98743500C044D6 /* XCTestWDMonkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0EE24A1F98743500C044D6 /* XCTestWDMonkey.swift */; };
+		7B0EE24E1F98743F00C044D6 /* XCTestWDApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0EE24C1F98743F00C044D6 /* XCTestWDApplication.m */; };
+		7B0EE24F1F98743F00C044D6 /* XCTestWDApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B0EE24D1F98743F00C044D6 /* XCTestWDApplication.h */; };
+		7B0EE2521F98751D00C044D6 /* XCTestgetDeviceip.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B0EE2501F98751D00C044D6 /* XCTestgetDeviceip.h */; };
+		7B0EE2531F98751D00C044D6 /* XCTestgetDeviceip.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0EE2511F98751D00C044D6 /* XCTestgetDeviceip.m */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
 		7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD799771EBC15D70053C4D2 /* Foundation.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B0EE2481F98741F00C044D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63D4080F1EAB629400198736 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63D408161EAB629400198736;
+			remoteInfo = XCTestWD;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		22AC58021F42E0BE006F85D7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +161,11 @@
 		63D408171EAB629400198736 /* XCTestWD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCTestWD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D4082B1EAB629400198736 /* XCTestWDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestWDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D4083B1EAB62D500198736 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = ../Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
+		7B0EE24A1F98743500C044D6 /* XCTestWDMonkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDMonkey.swift; sourceTree = "<group>"; };
+		7B0EE24C1F98743F00C044D6 /* XCTestWDApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestWDApplication.m; sourceTree = "<group>"; };
+		7B0EE24D1F98743F00C044D6 /* XCTestWDApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestWDApplication.h; sourceTree = "<group>"; };
+		7B0EE2501F98751D00C044D6 /* XCTestgetDeviceip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestgetDeviceip.h; sourceTree = "<group>"; };
+		7B0EE2511F98751D00C044D6 /* XCTestgetDeviceip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCTestgetDeviceip.m; sourceTree = "<group>"; };
 		7F2214861EB1CB6E006D706F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7FB002EF1EAC66F900476E7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -181,6 +199,8 @@
 		22AC58031F42E0BE006F85D7 /* PrivateHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				7B0EE24D1F98743F00C044D6 /* XCTestWDApplication.h */,
+				7B0EE24C1F98743F00C044D6 /* XCTestWDApplication.m */,
 				22AC58041F42E0BE006F85D7 /* CDStructures.h */,
 				22AC58051F42E0BE006F85D7 /* XCAccessibilityElement.h */,
 				22AC58061F42E0BE006F85D7 /* XCAXClient_iOS.h */,
@@ -202,6 +222,8 @@
 				22AC58161F42E0BE006F85D7 /* XCUICoordinate.h */,
 				22AC58171F42E0BE006F85D7 /* XCUIElement.h */,
 				22AC58181F42E0BE006F85D7 /* XCUIElementQuery.h */,
+				7B0EE2501F98751D00C044D6 /* XCTestgetDeviceip.h */,
+				7B0EE2511F98751D00C044D6 /* XCTestgetDeviceip.m */,
 			);
 			path = PrivateHeaders;
 			sourceTree = "<group>";
@@ -209,6 +231,7 @@
 		22AC58191F42E0BE006F85D7 /* server */ = {
 			isa = PBXGroup;
 			children = (
+				7B0EE24A1F98743500C044D6 /* XCTestWDMonkey.swift */,
 				22AC581A1F42E0BE006F85D7 /* controllers */,
 				22AC582F1F42E0BE006F85D7 /* models */,
 				22AC583D1F42E0BE006F85D7 /* XCTestWDController.swift */,
@@ -364,7 +387,9 @@
 				22AC58471F42E0BE006F85D7 /* XCElementSnapshot.h in Headers */,
 				22AC584D1F42E0BE006F85D7 /* XCTestDriverInterface-Protocol.h in Headers */,
 				22AC58441F42E0BE006F85D7 /* XCAccessibilityElement.h in Headers */,
+				7B0EE24F1F98743F00C044D6 /* XCTestWDApplication.h in Headers */,
 				22AC58481F42E0BE006F85D7 /* XCRuntimeUtils.h in Headers */,
+				7B0EE2521F98751D00C044D6 /* XCTestgetDeviceip.h in Headers */,
 				22AC58511F42E0BE006F85D7 /* XCTestPrivateSymbols.h in Headers */,
 				22AC58531F42E0BE006F85D7 /* XCTRunnerDaemonSession.h in Headers */,
 				22AC584F1F42E0BE006F85D7 /* XCTestManager_ManagerInterface-Protocol.h in Headers */,
@@ -409,6 +434,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7B0EE2491F98741F00C044D6 /* PBXTargetDependency */,
 			);
 			name = XCTestWDUITests;
 			productName = XCTestWDUITests;
@@ -422,20 +448,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = XCTestWD;
 				TargetAttributes = {
 					63D408161EAB629400198736 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = N5G28WF2Y2;
+						DevelopmentTeam = CYF32RS6L2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					63D4082A1EAB629400198736 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = N5G28WF2Y2;
+						DevelopmentTeam = CYF32RS6L2;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 63D408161EAB629400198736;
 					};
 				};
 			};
@@ -463,7 +490,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AC58A01F42E59B006F85D7 /* Info.plist in Resources */,
 				22AC589F1F42E59B006F85D7 /* Main.storyboard in Resources */,
 				22AC589D1F42E59B006F85D7 /* Assets.xcassets in Resources */,
 				22AC589E1F42E59B006F85D7 /* LaunchScreen.storyboard in Resources */,
@@ -474,7 +500,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AC58421F42E0BE006F85D7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B0EE2531F98751D00C044D6 /* XCTestgetDeviceip.m in Sources */,
 				22AC585C1F42E0BE006F85D7 /* Random.swift in Sources */,
 				22AC58651F42E0BE006F85D7 /* XCTestWDSessionController.swift in Sources */,
 				22AC58631F42E0BE006F85D7 /* XCTestWDMonkeyController.swift in Sources */,
@@ -563,6 +589,7 @@
 				22AC58491F42E0BE006F85D7 /* XCRuntimeUtils.m in Sources */,
 				22AC58611F42E0BE006F85D7 /* XCTestWDExecuteController.swift in Sources */,
 				22AC58781F42E0BE006F85D7 /* XCTestWDDispatch.swift in Sources */,
+				7B0EE24B1F98743500C044D6 /* XCTestWDMonkey.swift in Sources */,
 				22AC586D1F42E0BE006F85D7 /* XCTestWDApplicationTree.swift in Sources */,
 				22AC58701F42E0BE006F85D7 /* XCTestWDAlert.swift in Sources */,
 				22AC58741F42E0BE006F85D7 /* XCTestWDStatus.swift in Sources */,
@@ -572,6 +599,7 @@
 				22AC585E1F42E0BE006F85D7 /* XCTestWDAlertController.swift in Sources */,
 				22AC58521F42E0BE006F85D7 /* XCTestPrivateSymbols.m in Sources */,
 				22AC58621F42E0BE006F85D7 /* XCTestWDKeysController.swift in Sources */,
+				7B0EE24E1F98743F00C044D6 /* XCTestWDApplication.m in Sources */,
 				22AC58771F42E0BE006F85D7 /* XCTestWDController.swift in Sources */,
 				22AC58661F42E0BE006F85D7 /* XCTestWDSourceController.swift in Sources */,
 				22AC58681F42E0BE006F85D7 /* XCTestWDTimeoutController.swift in Sources */,
@@ -597,6 +625,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B0EE2491F98741F00C044D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63D408161EAB629400198736 /* XCTestWD */;
+			targetProxy = 7B0EE2481F98741F00C044D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		22AC58961F42E59B006F85D7 /* LaunchScreen.storyboard */ = {
@@ -629,7 +665,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -637,7 +675,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -682,7 +724,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -690,7 +734,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -724,15 +772,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				DEVELOPMENT_TEAM = CYF32RS6L2;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = XCTestWD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ele.XCTestWD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "XCTestWD/XCTestWD-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -745,15 +793,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				DEVELOPMENT_TEAM = CYF32RS6L2;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = XCTestWD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ele.XCTestWD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "XCTestWD/XCTestWD-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -763,7 +811,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				DEVELOPMENT_TEAM = CYF32RS6L2;
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -774,13 +822,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWDUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ele.XCTestWDUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				SWIFT_OBJC_BRIDGING_HEADER = "XCTestWDUITests/XCTestWDUITests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = XCTestWD;
 				XCTESTWD_PORT = 8001;
 			};
 			name = Debug;
@@ -790,7 +839,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				DEVELOPMENT_TEAM = CYF32RS6L2;
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -801,12 +850,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWDUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ele.XCTestWDUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				SWIFT_OBJC_BRIDGING_HEADER = "XCTestWDUITests/XCTestWDUITests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = XCTestWD;
 				XCTESTWD_PORT = 8001;
 			};
 			name = Release;

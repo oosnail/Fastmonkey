@@ -57,7 +57,7 @@ import UIKit
     ```
 */
 public class Monkey {
-    let elapsedTime = 0  // ?s
+    let elapsedTime = 30*60  // ?s
     let actionMax = 0
     let throttle = 0 * 1000  // ?ms *1000
     let randomize_throttle = false
