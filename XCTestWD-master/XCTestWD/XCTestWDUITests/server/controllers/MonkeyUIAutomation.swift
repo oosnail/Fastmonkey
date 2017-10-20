@@ -86,7 +86,7 @@ extension Monkey {
     public func addUIAutomationTapAction(weight: Double, multipleTapProbability: Double = 0.05,
     multipleTouchProbability: Double = 0.05, longPressProbability: Double = 0.05) {
         addAction(weight: weight) { [weak self] in
-            let numberOfTaps: Int
+            var numberOfTaps: Int
             if self!.r.randomDouble()<multipleTapProbability {
                 numberOfTaps = Int(self!.r.randomUInt32() % 2) + 2
             } else {
@@ -103,7 +103,11 @@ extension Monkey {
 
             let duration: Double
             if self!.r.randomDouble()<longPressProbability { duration = 0.5 }
-            else { duration = 0 }
+            else {
+                //由于饿了么在测试app里面 双指长按吊起测试界面。所以需要把这个手势禁止掉
+                duration = 0
+                numberOfTaps = 1
+            }
 
             for i in 1...numberOfTaps {
                 eventGenerator.touchDownAtPoints(touches, touchCount: UInt64(touches.count))
