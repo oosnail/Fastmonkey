@@ -56,10 +56,20 @@ import UIKit
     }
     ```
 */
+
+func OOLog<T>(_ message : T, file : String = #file, lineNumber : Int = #line) {
+    
+    #if DEBUG
+        
+        let fileName = (file as NSString).lastPathComponent
+        print("[\(fileName):line:\(lineNumber)]- \(message)")
+        
+    #endif
+}
 public class Monkey {
     let elapsedTime = 30*60  // ?s
     let actionMax = 0
-    let throttle = 0 * 1000  // ?ms *1000
+    let throttle = 700 * 1000  // ?ms *1000
     let randomize_throttle = false
     
     
@@ -173,11 +183,20 @@ public class Monkey {
         DispatchQueue.global().async {
             if self.elapsedTime != 0{
                 Thread.sleep(forTimeInterval: TimeInterval(self.elapsedTime))
+                OOLog("monkey  finish")
+                DispatchQueue.main.async {
+                    OOLog("monkey  finish")
+                    XCUIDevice.shared().press(XCUIDeviceButton.home)
+                }
                 exit(0)
             }
             if self.actionMax != 0{
                 while self.actionMax >= self.count{
                     usleep(500000)
+                }
+                DispatchQueue.main.async {
+                    OOLog("monkey  finish")
+                    XCUIDevice.shared().press(XCUIDeviceButton.home)
                 }
                 exit(0)
             }
@@ -202,11 +221,19 @@ public class Monkey {
         DispatchQueue.global().async {
             if self.elapsedTime != 0{
                 Thread.sleep(forTimeInterval: TimeInterval(self.elapsedTime))
+                DispatchQueue.main.async {
+                    OOLog("monkey  finish")
+                    XCUIDevice.shared().press(XCUIDeviceButton.home)
+                }
                 exit(0)
             }
             if self.actionMax != 0{
                 while self.actionMax >= self.count{
                     usleep(500000)
+                }
+                DispatchQueue.main.async {
+                    OOLog("monkey  finish")
+                    XCUIDevice.shared().press(XCUIDeviceButton.home)
                 }
                 exit(0)
             }

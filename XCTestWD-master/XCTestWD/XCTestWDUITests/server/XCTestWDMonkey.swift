@@ -39,7 +39,7 @@ public class XCTestWDMonkey {
         monkey.addDefaultXCTestPrivateActions()
         monkey.addXCTestTapAlertAction(interval: 100, application: app)
         monkey.addXCTestCheckCurrentApp(interval: 10, application: app)
-        //monkey.addXCTestAppLogin(interval: 50, application: app)
+        monkey.addXCTestAppLogin(interval: 50, application: app)
         monkey.monkeyAround()
         RunLoop.main.run()
         return 0

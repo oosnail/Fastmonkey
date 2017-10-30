@@ -36,7 +36,7 @@ extension Monkey {
         //addXCTestElementTapAction(weight: 10)
     
         addXCTestTapAction(weight: 35)
-        addXCTestLongPressAction(weight: 1)
+//        addXCTestLongPressAction(weight: 1)
         addXCTestDragAction(weight: 1)
         addXCTestPinchCloseAction(weight: 1)
         addXCTestPinchOpenAction(weight: 1)
@@ -62,23 +62,28 @@ extension Monkey {
     public func addXCTestTapAction(weight: Double, multipleTapProbability: Double = 0.05,
     multipleTouchProbability: Double = 0.05) {
         addAction(weight: weight) { [weak self] in
+//            OOLog("weight:\(weight),multipleTapProbability:\(multipleTapProbability),multipleTouchProbability:]\(multipleTouchProbability)")
             let numberOfTaps: UInt
-            if self!.r.randomDouble() < multipleTapProbability {
-                numberOfTaps = UInt(self!.r.randomUInt32() % 2) + 2
-            } else {
-                numberOfTaps = 1
-            }
+//            if self!.r.randomDouble() < multipleTapProbability {
+//                numberOfTaps = UInt(self!.r.randomUInt32() % 2) + 2
+
+            //                numberOfTaps = 1
+//            }
+//
             
             let locations: [CGPoint]
-            if self!.r.randomDouble() < multipleTouchProbability {
-                let numberOfTouches = Int(self!.r.randomUInt32() % 3) + 2
-                let rect = self!.randomRect()
-                locations = (1...numberOfTouches).map { _ in
-                    self!.randomPoint(inRect: rect)
-                }
-            } else {
-                locations = [ self!.randomPoint() ]
-            }
+//            if self!.r.randomDouble() < multipleTouchProbability {
+//                let numberOfTouches = Int(self!.r.randomUInt32() % 3) + 2
+//                let rect = self!.randomRect()
+//                locations = (1...numberOfTouches).map { _ in
+//                    self!.randomPoint(inRect: rect)
+//                }
+//            } else {
+//                locations = [ self!.randomPoint() ]
+//            }
+            numberOfTaps = 1
+            locations = [ self!.randomPoint() ]
+
             
             let semaphore = DispatchSemaphore(value: 0)
             self!.sharedXCEventGenerator.tapAtTouchLocations(locations, numberOfTaps: numberOfTaps, orientation: orientationValue) {
@@ -141,6 +146,7 @@ extension Monkey {
     
     public func addXCTestElementsetvalue(element:XCUIElement ,text:String){
         addAction(){
+            OOLog("message")
             let semaphore = DispatchSemaphore(value: 0)
             XCTestDaemonsProxy.testRunnerProxy()._XCT_send(text, maximumFrequency: 60) { (error) in
                 semaphore.signal()
@@ -155,6 +161,7 @@ extension Monkey {
     
     public func addXCTestLoginAction(application:XCUIApplication) {
         addAction(){ [weak self] in
+            OOLog("message")
             do{
                 let session = try XCTestWDSessionManager.singleton.checkDefaultSessionthrow()
                 let root = session.application
@@ -258,16 +265,17 @@ extension Monkey {
           zero. Probabilities will be normalised to the sum
           of all relative probabilities.
     */
-    public func addXCTestLongPressAction(weight: Double) {
-        addAction(weight: weight) { [weak self] in
-            let point = self!.randomPoint()
-            let semaphore = DispatchSemaphore(value: 0)
-            self!.sharedXCEventGenerator.pressAtPoint(point, forDuration: 0.5, orientation: orientationValue) {
-                semaphore.signal()
-            }
-            semaphore.wait()
-        }
-    }
+//    public func addXCTestLongPressAction(weight: Double) {
+//        addAction(weight: weight) { [weak self] in
+//            OOLog("message")
+//            let point = self!.randomPoint()
+//            let semaphore = DispatchSemaphore(value: 0)
+//            self!.sharedXCEventGenerator.pressAtPoint(point, forDuration: 0.5, orientation: orientationValue) {
+//                semaphore.signal()
+//            }
+//            semaphore.wait()
+//        }
+//    }
 
     /**
         Add an action that generates a drag event from one random

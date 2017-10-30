@@ -28,6 +28,7 @@ extension Monkey {
     */
     public func addXCTestTapAlertAction(interval: Int, application: XCUIApplication) {
         addAction(interval: interval) { [weak self] in
+            OOLog("addXCTestTapAlertAction")
             // The test for alerts on screen and dismiss them if there are any.
             //            for i in 0 ..< application.alerts.count {
             //                let alert = application.alerts.element(boundBy: i)
@@ -101,10 +102,11 @@ extension Monkey {
                 let root = session.application
                 if root != nil{
                     let usage = "xpath"
-                    let tag = "//XCUIElementTypeOther[@name='登录']/XCUIElementTypeTextField"
+                    let tag = "//XCUIElementTypeOther[@name='登录']/XCUIElementTypeAny"
                     let element = try? XCTestWDFindElementUtils.filterElement(usingText: usage, withvalue: tag, underElement: root!)
                     if let element = element {
                         if element != nil {
+//                        if true{
                             self?.addXCTestLoginAction(application: application)
                         }
                         else{

@@ -518,6 +518,7 @@ internal class XCTestWDElementController: Controller {
     }
     
     private static func getDoubleValue(target:JSON?, field:String) -> Double? {
+        return 0.0
         if target == nil {
             return nil
         }

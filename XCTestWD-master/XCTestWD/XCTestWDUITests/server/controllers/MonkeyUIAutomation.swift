@@ -63,6 +63,7 @@ extension Monkey {
     */
     public func addUIAutomationSingleTapAction(weight: Double) {
         addAction(weight: weight) { [weak self] in
+            OOLog("message")
             eventGenerator.sendTap(self!.randomPoint())
         }
     }
@@ -86,6 +87,7 @@ extension Monkey {
     public func addUIAutomationTapAction(weight: Double, multipleTapProbability: Double = 0.05,
     multipleTouchProbability: Double = 0.05, longPressProbability: Double = 0.05) {
         addAction(weight: weight) { [weak self] in
+            OOLog("message")
             var numberOfTaps: Int
             if self!.r.randomDouble()<multipleTapProbability {
                 numberOfTaps = Int(self!.r.randomUInt32() % 2) + 2
@@ -111,7 +113,7 @@ extension Monkey {
 
             for i in 1...numberOfTaps {
                 eventGenerator.touchDownAtPoints(touches, touchCount: UInt64(touches.count))
-                self!.sleep(duration)
+//                self!.sleep(duration)
                 eventGenerator.liftUpAtPoints(touches, touchCount: UInt64(touches.count))
                 if i != numberOfTaps { self!.sleep(0.2) }
             }
@@ -292,7 +294,7 @@ extension Monkey {
         addAction(weight: weight) { [weak self] in
             let duration = 3 * self!.r.randomDouble()
             eventGenerator.lockDevice()
-            self!.sleep(duration)
+//            self!.sleep(duration)
             eventGenerator.sendDragWithStartPoint(CGPoint(x: 20, y: 400), endPoint: CGPoint(x: 300, y: 400), duration: 0.5)
         }
     }

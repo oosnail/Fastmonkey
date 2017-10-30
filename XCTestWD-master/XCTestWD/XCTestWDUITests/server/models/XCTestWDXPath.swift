@@ -72,7 +72,6 @@ internal class XCTestWDXPath {
                 results.append(mapping[node.attr("private_indexPath")!]!)
             }
         }
-        
         return results
     }
     
