@@ -40,6 +40,23 @@ internal class XCTestWDMonkeyController: Controller {
         let desiredCapabilities = request.jsonBody["desiredCapabilities"].dictionary
         let path = desiredCapabilities?["app"]?.string ?? nil
         let bundleID = desiredCapabilities?["bundleId"]?.string ?? nil
+        let deviceName = desiredCapabilities?["deviceName"]?.string ?? nil
+        let throttle = desiredCapabilities?["throttle"]?.int ?? 0
+        let pct_touch = desiredCapabilities?["pct_touch"]?.double ?? 35.0
+        let pct_motion = desiredCapabilities?["pct_motion"]?.double ?? 5.0
+        let pct_syskeys = desiredCapabilities?["pct_syskeys"]?.double ?? 5.0
+
+        let config = MonkeyConfig.sharedInstance
+        config.bundleID = bundleID
+        config.deviceName = deviceName
+        config.throttle = throttle
+        config.pct_touch = pct_touch
+        config.pct_motion = pct_motion
+        config.pct_syskeys = pct_syskeys
+        
+        
+
+        
         if bundleID == nil {
             app = XCTestWDSession.activeApplication()
         } else {
@@ -65,6 +82,7 @@ internal class XCTestWDMonkeyController: Controller {
         _ = app.descendants(matching: .any).element(boundBy: 0).frame
         let monkey = Monkey(frame: app.frame)
         monkey.addDefaultXCTestPrivateActions()
+//        monkey.addDefaultUIAutomationActions()
         monkey.addXCTestTapAlertAction(interval: 100, application: app)
         monkey.addXCTestCheckCurrentApp(interval: 10, application: app)
 //        monkey.addXCTestAppLogin(interval: 50, application: app)

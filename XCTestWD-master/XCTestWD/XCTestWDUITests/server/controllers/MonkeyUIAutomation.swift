@@ -39,13 +39,13 @@ extension Monkey {
         strong requirements on exactly which ones you need.
     */
     public func addDefaultUIAutomationActions() {
-        addUIAutomationTapAction(weight: 50)
-        addUIAutomationDragAction(weight: 1)
-        addUIAutomationFlickAction(weight: 1)
-        addUIAutomationPinchCloseAction(weight: 1)
-        addUIAutomationPinchOpenAction(weight: 1)
+//        addUIAutomationTapAction(weight: 50)
+//        addUIAutomationDragAction(weight: 1)
+//        addUIAutomationFlickAction(weight: 1)
+//        addUIAutomationPinchCloseAction(weight: 1)
+//        addUIAutomationPinchOpenAction(weight: 1)
         //addUIAutomationRotateAction(weight: 1) // TODO: Investigate why this is broken.
-        addUIAutomationOrientationAction(weight: 1)
+//        addUIAutomationOrientationAction(weight: 1)
         addUIAutomationClickVolumeUpAction(weight: 1)
         addUIAutomationClickVolumeDownAction(weight: 1)
         addUIAutomationShakeAction(weight: 1)
@@ -103,13 +103,16 @@ extension Monkey {
                 touches = [ self!.randomPoint() ]
             }
 
-            let duration: Double
+            var duration: Double
             if self!.r.randomDouble()<longPressProbability { duration = 0.5 }
             else {
                 //由于饿了么在测试app里面 双指长按吊起测试界面。所以需要把这个手势禁止掉
                 duration = 0
                 numberOfTaps = 1
             }
+            
+            duration = 0
+            numberOfTaps = 1
 
             for i in 1...numberOfTaps {
                 eventGenerator.touchDownAtPoints(touches, touchCount: UInt64(touches.count))

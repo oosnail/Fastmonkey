@@ -69,7 +69,7 @@ func OOLog<T>(_ message : T, file : String = #file, lineNumber : Int = #line) {
 public class Monkey {
     let elapsedTime = 30*60  // ?s
     let actionMax = 0
-    let throttle = 700 * 1000  // ?ms *1000
+    let throttle = MonkeyConfig.sharedInstance.throttle * 1000  // ?ms *1000
     let randomize_throttle = false
     
     

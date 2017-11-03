@@ -7,6 +7,8 @@
 import UIKit
 import XCTest
 
+//ci
+
 var orientationValue: UIDeviceOrientation = .portrait
 
 /**
@@ -26,6 +28,7 @@ extension Monkey {
         return generatorClass.sharedGenerator()
     }
 
+
     /**
         Add a sane default set of event generation actions
         using the private XCTest API. Use this function if you
@@ -33,14 +36,13 @@ extension Monkey {
         strong requirements on exactly which ones you need.
     */
     public func addDefaultXCTestPrivateActions() {
-        //addXCTestElementTapAction(weight: 10)
-    
-        addXCTestTapAction(weight: 35)
-//        addXCTestLongPressAction(weight: 1)
-        addXCTestDragAction(weight: 1)
-        addXCTestPinchCloseAction(weight: 1)
-        addXCTestPinchOpenAction(weight: 1)
-        addXCTestRotateAction(weight: 1)
+        addXCTestElementTapAction(weight: 10)
+        addXCTestTapAction(weight:  Double(MonkeyConfig.sharedInstance.pct_touch))
+        addXCTestLongPressAction(weight: Double(MonkeyConfig.sharedInstance.pct_motion/2))
+        addXCTestDragAction(weight: Double(MonkeyConfig.sharedInstance.pct_motion/2))
+//        addXCTestPinchCloseAction(weight: 1)
+//        addXCTestPinchOpenAction(weight: 1)
+//        addXCTestRotateAction(weight: 1)
         addXCTestSlipScreenAction(weight: 5)
         //addXCTestOrientationAction(weight: 1) // TODO: Investigate why this does not work.
     }
@@ -63,26 +65,26 @@ extension Monkey {
     multipleTouchProbability: Double = 0.05) {
         addAction(weight: weight) { [weak self] in
 //            OOLog("weight:\(weight),multipleTapProbability:\(multipleTapProbability),multipleTouchProbability:]\(multipleTouchProbability)")
-            let numberOfTaps: UInt
-//            if self!.r.randomDouble() < multipleTapProbability {
-//                numberOfTaps = UInt(self!.r.randomUInt32() % 2) + 2
+            var numberOfTaps: UInt
+            if self!.r.randomDouble() < multipleTapProbability {
+                numberOfTaps = UInt(self!.r.randomUInt32() % 2) + 2
+            }else{
+                numberOfTaps = 1
+            }
 
-            //                numberOfTaps = 1
-//            }
-//
             
             let locations: [CGPoint]
-//            if self!.r.randomDouble() < multipleTouchProbability {
-//                let numberOfTouches = Int(self!.r.randomUInt32() % 3) + 2
-//                let rect = self!.randomRect()
-//                locations = (1...numberOfTouches).map { _ in
-//                    self!.randomPoint(inRect: rect)
-//                }
-//            } else {
-//                locations = [ self!.randomPoint() ]
-//            }
-            numberOfTaps = 1
-            locations = [ self!.randomPoint() ]
+            if self!.r.randomDouble() < multipleTouchProbability {
+                let numberOfTouches = Int(self!.r.randomUInt32() % 3) + 2
+                let rect = self!.randomRect()
+                locations = (1...numberOfTouches).map { _ in
+                    self!.randomPoint(inRect: rect)
+                }
+            } else {
+                locations = [ self!.randomPoint() ]
+            }
+//            numberOfTaps = 1
+//            locations = [ self!.randomPoint() ]
 
             
             let semaphore = DispatchSemaphore(value: 0)
@@ -90,6 +92,12 @@ extension Monkey {
                 semaphore.signal()
             }
             semaphore.wait()
+        }
+    }
+    
+    public func addXCVo(weight:Double){
+        addAction(weight: weight) { [weak self] in
+            self!.sharedXCEventGenerator
         }
     }
     
@@ -265,17 +273,17 @@ extension Monkey {
           zero. Probabilities will be normalised to the sum
           of all relative probabilities.
     */
-//    public func addXCTestLongPressAction(weight: Double) {
-//        addAction(weight: weight) { [weak self] in
-//            OOLog("message")
-//            let point = self!.randomPoint()
-//            let semaphore = DispatchSemaphore(value: 0)
-//            self!.sharedXCEventGenerator.pressAtPoint(point, forDuration: 0.5, orientation: orientationValue) {
-//                semaphore.signal()
-//            }
-//            semaphore.wait()
-//        }
-//    }
+    public func addXCTestLongPressAction(weight: Double) {
+        addAction(weight: weight) { [weak self] in
+            OOLog("message")
+            let point = self!.randomPoint()
+            let semaphore = DispatchSemaphore(value: 0)
+            self!.sharedXCEventGenerator.pressAtPoint(point, forDuration: 0.5, orientation: orientationValue) {
+                semaphore.signal()
+            }
+            semaphore.wait()
+        }
+    }
 
     /**
         Add an action that generates a drag event from one random
@@ -379,6 +387,7 @@ extension Monkey {
             semaphore.wait()
         }
     }
+    
 
     /**
         Add an action that generates a device rotation event
@@ -405,6 +414,9 @@ extension Monkey {
             orientationValue = orientations[index]
         }
     }
+    
+
+    
 }
 
 @objc protocol XCEventGenerator {
