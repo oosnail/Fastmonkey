@@ -18,7 +18,4 @@ class MonkeyConfig {
     var pct_touch:Double = 35
     var pct_motion:Double = 5
     var pct_syskeys:Double = 5
-
-    
-    
 }
